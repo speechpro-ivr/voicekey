@@ -1,0 +1,19 @@
+%form#index
+  %block
+    %prompt{:bargein=>"false"}
+      We don't know you. Let's proceed to the registration.
+      Create your passphrase. It should contain more than three words. For durability you will be asked to repeat it three times.
+    %goto{:next=>'#record'}
+
+%form#record
+  %record{:beep=>"true", :name=>"attempt1"}
+    %prompt{:bargein=>"false"}
+      After the beep please say your passphrase.
+  %record{:beep=>"true", :name=>"attempt2"}
+    %prompt{:bargein=>"false"}
+      One more time, please!
+  %record{:beep=>"true", :name=>"attempt3"}
+    %prompt{:bargein=>"false"}
+      And the last time.
+  %filled
+    %submit{:expr=>'enroll.xml', :namelist=>"attempt1 attempt2 attempt3"}

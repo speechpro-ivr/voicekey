@@ -1,0 +1,5 @@
+%form
+  %block
+    %prompt{:bargein=>"false"}
+      Welcome to speech pro biometrics demo!
+    %submit{:expr=>"'check_registration.xml?ani='+ session.connection.remote.uri"}
