@@ -3,7 +3,7 @@ class CreateClients < ActiveRecord::Migration
     create_table :clients do |t|
       t.string :name
       t.string :ani
-      t.string :cib
+      t.string :card_id
 
       t.timestamps
     end

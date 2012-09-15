@@ -16,4 +16,5 @@
     %prompt{:bargein=>"false"}
       And the last time.
   %filled
-    %submit{:expr=>'enroll.xml', :namelist=>"attempt1 attempt2 attempt3"}
+    %assign{:name=>'ani', :expr=>'session.connection.remote.uri'}
+    %submit{:expr=>'/enrollment/enroll.xml', :fetchaudio=>'/sounds/wait.wav' ,:namelist=>"ani attempt1 attempt2 attempt3"}

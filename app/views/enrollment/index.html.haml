@@ -1,0 +1,8 @@
+-# enrollment test
+%form{:action=>"enroll", :method=>'post', :enctype=>"multipart/form-data"}
+  %input{:type=>'text', :name=>'ani'}
+  %input{:type=>'file', :name=>'attempt1'}
+  %input{:type=>'file', :name=>'attempt2'}
+  %input{:type=>'file', :name=>'attempt3'}
+  %button{:type=>'submit'}
+    Submit
