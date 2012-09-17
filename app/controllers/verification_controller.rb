@@ -12,7 +12,11 @@ class VerificationController < ApplicationController
   	doc = Nokogiri::XML(responce)
 
   	if doc.xpath('EnrollVerify').attr('Status').text == 'OK'
-  		redirect_to :action => 'success', :format => params[:format]	
+      if doc.xpath('/EnrollVerify/CardCompareResult/VoiceKeyScore').text.to_i > 0.7 
+  		  redirect_to :action => 'success', :format => params[:format]	
+      else
+        redirect_to :action => 'error', :format => params[:format]
+      end
   	else
   		redirect_to :action => 'error', :format => params[:format]
   	end
