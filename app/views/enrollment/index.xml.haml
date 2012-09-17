@@ -17,4 +17,4 @@
       And the last time.
   %filled
     %assign{:name=>'ani', :expr=>'session.connection.remote.uri'}
-    %submit{:next=>"/enrollment/enroll.xml", :fetchaudio=>'/sounds/wait.wav', :fetchtimeout="15s" ,:namelist=>"ani attempt1 attempt2 attempt3", :method=>'post'}
+    %submit{:next=>"/enrollment/enroll.xml", :fetchaudio=>"/sounds/wait.wav", :fetchtimeout=>"15s", :namelist=>"ani attempt1 attempt2 attempt3", :method=>"post"}
