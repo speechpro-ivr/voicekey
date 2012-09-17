@@ -1,5 +1,13 @@
-%form
+%form#index
   %block
-    %prompt
-      We've recognized you! Let's proceed to verification.
-    %disconnect
+    %prompt{:bargein=>"false"}
+      We've recognized you! Let's proceed to the verification.
+    %goto{:next=>"#record"}
+
+%form#record
+	%record{:beep=>"true", :name=>"passphrase"}
+    %prompt{:bargein=>"false"}
+      After the beep please say your passphrase.
+  %filled
+    %assign{:name=>'ani', :expr=>'session.connection.remote.uri'}
+    %submit{:next=>"/verification/verify.xml", :fetchaudio=>"/sounds/wait.wav", :fetchtimeout=>"15s", :namelist=>"ani passphrase", :method=>"post"}

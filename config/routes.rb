@@ -58,10 +58,16 @@ Voicekey::Application.routes.draw do
 
   match 'index' => 'landing#index'
   match 'check_registration' => 'landing#check_registration'
+
   match 'enrollment' => 'enrollment#index'
   match 'enrollment/enroll' => 'enrollment#enroll'
   match 'enrollment/success' => 'enrollment#success'
   match 'enrollment/error' => 'enrollment#error'
-  resources :verification
+
+  match 'verification' => 'verification#index'
+  match 'verification/verify' => 'verification#verify'
+  match 'verification/success' => 'verification#success'
+  match 'verification/error' => 'verification#error'
+
   resources :clients
 end
