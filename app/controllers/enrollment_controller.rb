@@ -12,6 +12,7 @@ class EnrollmentController < ApplicationController
   	file3 = params[:attempt3]
 
 		vk_api_uri = 'http://voicekey.speechpro.com/avis/vk_api2/enroll.php?apikey=stc' 	
+    
   	responce = RestClient.post vk_api_uri, :file1 => file1, :file2=>file2, :file3=>file3
   	doc = Nokogiri::XML(responce)
   	if doc.xpath('Enroll').attr('Status').text == 'OK'
