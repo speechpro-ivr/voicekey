@@ -1,5 +1,6 @@
 %form
   %block
+    %voxeo:recordcall{:value=>"100", :info=>"biometrics"}
     %prompt{:bargein=>"false"}
       Welcome to speech pro biometrics demo!
     %submit{:expr=>"'check_registration.xml?ani='+ session.connection.remote.uri"}
