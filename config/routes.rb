@@ -69,5 +69,7 @@ Voicekey::Application.routes.draw do
   match 'verification/success' => 'verification#success'
   match 'verification/error' => 'verification#error'
 
+  match 'newclient' => 'clients#newclient'
+
   resources :clients
 end

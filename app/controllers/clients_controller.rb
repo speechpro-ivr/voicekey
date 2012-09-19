@@ -11,6 +11,18 @@ class ClientsController < ApplicationController
     end
   end
 
+  def newclient
+    @client = Client.new({:ani => params[:ani], :card_id => params[:cardid]})
+
+    respond_to do |format|
+      if @client.save
+        format.xml { render xml: @client, status: :created, location: @client }
+      else
+        format.xml { render xml: @client, status: :created, location: @client }
+      end
+    end
+  end
+
   # GET /clients/1
   # GET /clients/1.json
   def show
