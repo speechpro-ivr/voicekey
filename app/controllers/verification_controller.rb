@@ -14,7 +14,7 @@ class VerificationController < ApplicationController
 
 
   	if doc.xpath('EnrollVerify').attr('Status').text == 'OK'
-      if doc.xpath('/EnrollVerify/CardCompareResult/VoiceKeyScore').text.to_f > 0.65 
+      if doc.xpath('/EnrollVerify/CardCompareResult/VoiceKeyScore').text.to_f > 0.6 
   		  redirect_to :action => 'success', :format => params[:format]	
       else
         redirect_to :action => 'error', :format => params[:format]
